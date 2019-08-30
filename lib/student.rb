@@ -34,7 +34,7 @@ class Student
 
       sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
       DB[:conn].execute(sql, self.name, self.grade, self.id)
-      
+
     else
 
       sql = "INSERT INTO students(name, grade) VALUES(?, ?);"
@@ -47,7 +47,11 @@ class Student
     end
   end
 
-  # Remember, you can access your database connection anywhere in this class
+  def self.create(name, grade)
+    student = Student.new(name, grade)
+    student.save
+    student
+  end
   #  with DB[:conn]
 
 
