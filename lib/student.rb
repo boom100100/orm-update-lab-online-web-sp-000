@@ -33,18 +33,15 @@ class Student
     if @id
       #update
     else
-      sql = <<-SQL
-      INSERT INTO students(
-        ?,
-        ?);
-      SQL
+      sql = "INSERT INTO students(?, ?);"
+
 
       DB[:conn].execute(sql, self.name, self.grade)
 
       last = "SELECT last_insert_rowid() FROM students"
       row = DB[:conn].execute(last)
       self.id = row[0]
-      
+
     end
   end
 
