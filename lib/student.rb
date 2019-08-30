@@ -62,7 +62,7 @@ class Student
     sql = "SELECT * FROM students WHERE name = \"?\";"
     row = DB[:conn].execute(sql, name).first
 
-    student = Student.new(row[0][1], row[0][2], row[0][0])
+    student = Student.new(row[1], row[2], row[0])
 
   end
 
