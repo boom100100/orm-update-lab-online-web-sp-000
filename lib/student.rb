@@ -31,7 +31,12 @@ class Student
 
   def save
     if @id
-      #update
+      sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
+
+
+      DB[:conn].execute(sql, self.name, self.grade, self.id)
+
+
     else
       sql = "INSERT INTO students(name, grade) VALUES(?, ?);"
 
