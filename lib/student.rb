@@ -66,10 +66,8 @@ class Student
 
   end
 
-  def update(name, grade)
-    student = Student.new(name, grade)
-    student.save
-    student
+  def update
+    sql = "UPDATE students SET name = , grade =  WHERE = ;"
   end
   #  with DB[:conn]
 
