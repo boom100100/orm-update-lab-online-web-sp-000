@@ -40,7 +40,7 @@ class Student
 
       last = "SELECT last_insert_rowid() FROM students"
       row = DB[:conn].execute(last)
-      self.id = row[0]
+      @id = row[0]
 
     end
   end
