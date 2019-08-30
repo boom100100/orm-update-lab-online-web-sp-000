@@ -66,13 +66,10 @@ class Student
 
   end
 
-  def self.update(name, grade)
+  def update(name, grade)
     student = Student.new(name, grade)
     student.save
     student
-  end
-
-  def update
   end
   #  with DB[:conn]
 
